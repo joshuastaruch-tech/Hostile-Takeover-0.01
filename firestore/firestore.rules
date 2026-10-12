@@ -1,0 +1,86 @@
+rules_version = '2';
+// Card Registry — Firestore security rules.
+// Public reads for card data. Append-only ledger. Player-scoped
+// entitlements. All writes to registry state go through Cloud Functions
+// with the Admin SDK (custom claim: backend == true).
+service cloud.firestore {
+  match /databases/{db}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function isBackend() {
+      return signedIn() && request.auth.token.backend == true;
+    }
+    function isSelf(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    // ---- public catalog: anyone can read, only backend writes ----
+    match /issuers/{id} {
+      allow read: if true;
+      allow write: if isBackend();
+    }
+    match /cardDefinitions/{id} {
+      allow read: if true;
+      allow write: if isBackend();
+      match /media/{kind} {
+        allow read: if true;
+        allow write: if isBackend();
+      }
+      match /gameProfiles/{game} {
+        allow read: if true;
+        allow write: if isBackend();
+      }
+    }
+    match /games/{id} {
+      allow read: if true;
+      allow write: if isBackend();
+    }
+
+    // ---- instances: public read; state changes via functions ----
+    match /cardInstances/{id} {
+      allow read: if true;
+      // currentOwnerId / claimCodeHash are maintained by onLedgerWrite
+      // and claimCard — never direct client writes.
+      allow write: if isBackend();
+
+      match /ledger/{lid} {
+        allow read: if true;
+        allow create: if isBackend();
+        // append-only: no updates, no deletes, ever.
+        allow update, delete: if false;
+      }
+    }
+
+    // ---- entitlements: player reads own, backend writes ----
+    match /entitlements/{id} {
+      allow read: if isBackend()
+        || (signedIn() && resource.data.playerId == request.auth.uid);
+      allow write: if isBackend();
+    }
+
+    // ---- players: self or backend ----
+    match /players/{uid} {
+      allow read: if isSelf(uid) || isBackend();
+      allow write: if isBackend();
+      // wallets: Phase 2 — see data-model.md
+    }
+
+    // ---- cross-medium links: public read, backend write ----
+    match /nftTokens/{id} {
+      allow read: if true;
+      allow write: if isBackend();
+    }
+    match /physicalLinks/{id} {
+      allow read: if true;
+      allow write: if isBackend();
+    }
+
+    // ---- stolen/destroyed proofs: public read, backend write ----
+    // Anchoring the hash on-chain is the system's only blockchain
+    // interaction (Phase 1).
+    match /proofs/{id} {
+      allow read: if true;
+      allow write: if isBackend();
+    }
+  }
+}
