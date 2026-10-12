@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+.firebase/
+functions/__pycache__/
+# Firebase / Google service-account keys — NEVER commit (added 2026-10-12 pre-upload)
+*service-account*.json
+*serviceAccount*.json
+serviceAccountKey.json
+*firebase-adminsdk*.json
+*-sa-key.json
+credentials.json
