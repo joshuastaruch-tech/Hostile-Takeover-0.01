@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MYTHOS — Card Viewer (Beta 0.01 prototype)</title>
+<!--
+  Beta 0.01 PROTOTYPE — standalone card viewer.
+  Lives alongside the mirrored game files in preview/. Loads the game's own
+  data.js (window.MYTHOS_DATA) and style.css; no backend, no game engine.
+  Card art is referenced from the live GitHub Pages site because the binary
+  assets could not be mirrored through the fetch channel (see PREP.md);
+  if art fails to load, each card falls back to a text face built from data.
+  In the integrated build (proposal, PREP.md §4) this page's grid/detail
+  becomes a view inside the game's own page, entered from the start screen.
+-->
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Viewer-only layout, built on the game's own palette variables. */
+  #viewer { max-width: 1200px; margin: 0 auto; padding: 24px 16px 48px; }
+  #viewer h1 { color: var(--gold); letter-spacing: 10px; font-size: 34px; margin: 0; text-align: center; }
+  #viewer .vsub { text-align: center; color: var(--blood); letter-spacing: 6px; margin-top: 4px; }
+  #viewer .vnote { text-align: center; color: var(--dim); font-style: italic; font-size: 13px; margin-top: 8px; }
+  .vbar { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; align-items: center; margin: 22px 0 6px; }
+  .vbar button.active { background: var(--gold); color: #0a0a0f; font-weight: bold; }
+  .vbar input {
+    background: #0a0a0f; color: var(--ink); border: 1px solid #3a3a48; border-radius: 6px;
+    padding: 7px 10px; font-size: 14px; font-family: inherit; min-width: 180px;
+  }
+  .vbar input:focus { outline: none; border-color: var(--gold); }
+  #viewer-count { text-align: center; color: var(--dim); font-size: 13px; margin: 6px 0 14px; }
+  #viewer-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+  #viewer-grid .bcard { width: var(--card-w); }
+  #viewer-grid .bcard .vname { font-size: 12px; text-align: center; margin-top: 3px; color: var(--ink); }
+  #viewer-grid .bcard.noart .vtextface {
+    width: var(--card-w); aspect-ratio: 5 / 7; border-radius: 8px; border: 1px solid var(--gold);
+    background: var(--panel2); padding: 8px; display: flex; flex-direction: column; gap: 4px;
+  }
+  .vtextface .vt-name { color: var(--gold); font-size: 13px; font-weight: bold; }
+  .vtextface .vt-type { color: #9fd4ff; font-size: 11px; }
+  .vtextface .vt-rules { color: var(--ink); font-size: 11px; line-height: 1.35; overflow: hidden; }
+  #viewer-detail { position: fixed; inset: 0; background: rgba(0,0,0,.78); z-index: 70;
+    display: none; align-items: center; justify-content: center; padding: 16px; }
+  #viewer-detail img.vart { width: min(300px, 70vw); border-radius: 10px; cursor: zoom-in; }
+  .vstats { font-size: 14px; line-height: 1.5; margin: 8px 0; }
+  .vstats b { color: var(--gold); }
+  #viewer-zoom { position: fixed; inset: 0; background: rgba(0,0,0,.85); z-index: 90;
+    display: none; align-items: center; justify-content: center; }
+  #viewer-zoom img { max-width: 92vw; max-height: 88vh; border-radius: 10px; }
+  .vback { text-align: center; margin-top: 26px; }
+</style>
+</head>
+<body>
+<div id="viewer">
+  <h1>MYTHOS</h1>
+  <div class="vsub">CARD VIEWER</div>
+  <p class="vnote">Beta 0.01 prototype — browse the full 60-card set. Data: the game's own data.js. No backend.</p>
+  <div class="vbar" id="viewer-filters"></div>
+  <div class="vbar"><input id="viewer-search" type="search" placeholder="Search by name…" aria-label="Search cards by name"></div>
+  <div id="viewer-count"></div>
+  <div id="viewer-grid"></div>
+  <p class="vback"><a href="index.html" style="color: var(--gold);">← Back to the game (mirrored start page)</a></p>
+</div>
+
+<div id="viewer-detail">
+  <div class="modal">
+    <button class="x" id="vd-close" aria-label="Close">✕</button>
+    <div id="vd-body"></div>
+  </div>
+</div>
+<div id="viewer-zoom"><img id="vz-img" alt="Card art, enlarged"></div>
+
+<script src="data.js"></script>
+<script src="viewer.js"></script>
+</body>
+</html>
