@@ -1,0 +1,97 @@
+// CardRealm — Wix Velo BACKEND module (paste into Dev Mode as
+// backend/cardrealm-auth.jsw). Backend-only: the shared secret never
+// reaches the browser.
+//
+// Flow (Spark-safe, Wix initiates — Firebase never calls out to Wix):
+//   1. This module verifies the logged-in member natively, via
+//      wix-members-backend. Wix is the authority on its own members.
+//   2. It POSTs { wixMemberId, email, displayName } to the registry's
+//      mint_auth_token Cloud Function with the shared secret in the
+//      X-Webhook-Secret header.
+//   3. The function upserts players/{uid}, mints a Firebase custom
+//      token, and returns it. The frontend snippet
+//      (frontend/firebase-signin.js) signs into Firebase with it.
+//
+// Setup (see wix/README.md):
+//   - Store the shared secret in the Wix Secrets Manager under the
+//     name WIX_WEBHOOK_SECRET. The SAME value must exist in Firebase
+//     Secret Manager (staging project) — the function compares them.
+//   - Confirm MINT_URL after the first staging deploy; the function
+//     name in functions/main.py is `mint_auth_token`.
+
+import { fetch } from 'wix-fetch';
+import { getSecret } from 'wix-secrets-backend';
+import { currentMember } from 'wix-members-backend';
+
+// Staging only. After `firebase deploy --only functions` against
+// cardrealm-staging, the URL is:
+//   https://us-central1-cardrealm-staging.cloudfunctions.net/mint_auth_token
+const MINT_URL =
+  'https://us-central1-cardrealm-staging.cloudfunctions.net/mint_auth_token';
+
+async function callMintEndpoint(payload) {
+  const secret = await getSecret('WIX_WEBHOOK_SECRET');
+  const res = await fetch(MINT_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Webhook-Secret': secret,
+    },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) {
+    throw new Error(`mint_auth_token failed: ${res.status}`);
+  }
+  const data = await res.json();
+  return data;
+}
+
+// Called from page code after a member logs in. Returns a Firebase
+// custom token for the current Wix member, or null if nobody is
+// logged in.
+export async function getFirebaseToken() {
+  const member = await currentMember.getMember();
+  if (!member) return null;
+  const data = await callMintEndpoint({
+    wixMemberId: member._id || member.id,
+    email: member.loginEmail,
+    displayName:
+      (member.profile && member.profile.nickname) || member.loginEmail,
+    purpose: 'login',
+  });
+  return data.token;
+}
+
+// Used by the member webhook handlers in backend/events.js to keep
+// players/{uid} in sync. mint_auth_token has the `purpose === 'sync'`
+// branch (added 2026-10-12): sync calls upsert only — no token minted.
+export async function syncMember(member) {
+  if (!member) return null;
+  return callMintEndpoint({
+    wixMemberId: member._id || member.id,
+    email: member.loginEmail,
+    displayName:
+      (member.profile && member.profile.nickname) || member.loginEmail,
+    purpose: 'sync',
+  });
+}
+
+// Used by the Gumroad pipeline (backend/gumroad-http-functions.js):
+// like syncMember, but carries the membership tier so the registry
+// grants/revokes the per-game membership entitlements in the same
+// pass. Returns the game slugs granted ([] on revoke).
+export async function syncMemberEntitlement(member, opts) {
+  if (!member) return null;
+  const data = await callMintEndpoint({
+    wixMemberId: member._id || member.id,
+    email: member.loginEmail,
+    displayName:
+      (member.profile && member.profile.nickname) || member.loginEmail,
+    purpose: 'sync',
+    tier: opts.tier,
+    gameSlugs: opts.gameSlugs,
+    sourceEventId: opts.sourceEventId,
+    revoke: !!opts.revoke,
+  });
+  return data.granted || [];
+}
