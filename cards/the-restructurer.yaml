@@ -1,0 +1,25 @@
+slug: the-restructurer
+name: The Restructurer
+subtitle: Organizational Horror
+type_line: Abomination
+cost: 7
+rules_text: When The Restructurer enters, destroy target Location (reorg). If you
+  do, gain 2 sanity.
+flavor_text: Nothing is sacred. Everything is synergy.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 7
+    legal: true
+    stats:
+      power: 7
+      flesh: 6
+      leash: 3
+      upkeep: 3

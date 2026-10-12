@@ -1,0 +1,22 @@
+slug: mothman
+name: Mothman
+subtitle: Director of Night Operations
+type_line: Character
+cost: 4
+rules_text: 'Enter: draw a card (night reconnaissance).'
+flavor_text: “The night shift never ends.”
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 4
+    legal: true
+    stats:
+      control: 2
+      sanity: 5

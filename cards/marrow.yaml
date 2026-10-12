@@ -1,0 +1,23 @@
+slug: marrow
+name: Marrow
+subtitle: Director of Institutional Knowledge
+type_line: Character
+cost: 5
+rules_text: When Marrow enters, draw a card for each burned-out character you control
+  (exit interviews).
+flavor_text: She remembers everyone who left. She keeps their mugs.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 5
+    legal: true
+    stats:
+      control: 2
+      sanity: 6

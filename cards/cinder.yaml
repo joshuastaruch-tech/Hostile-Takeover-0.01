@@ -1,0 +1,24 @@
+slug: cinder
+name: Cinder
+subtitle: VP of Salvage
+type_line: Character
+cost: 4
+rules_text: 'Scrap Recovery — whenever a character you control burns out, gain 2 sanity.
+  / Reclamation (pay 2 sanity): return target card from your discard pile to your
+  hand.'
+flavor_text: One company's burnout is another's raw material.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 4
+    legal: true
+    stats:
+      control: 2
+      sanity: 5

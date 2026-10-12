@@ -1,0 +1,23 @@
+slug: supreme-worshiper
+name: Supreme Worshiper
+subtitle: Chief Devotion Officer
+type_line: Character
+cost: 5
+rules_text: 'Enter: gain 2 sanity for each other character you control. / Sermon (pay
+  2 sanity): a character gains 2 personal sanity.'
+flavor_text: He worships whatever signs his checks.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 5
+    legal: true
+    stats:
+      control: 3
+      sanity: 5

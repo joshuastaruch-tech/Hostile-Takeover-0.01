@@ -1,0 +1,25 @@
+slug: the-full-timer
+name: The Full-Timer
+subtitle: Promoted From Within
+type_line: Abomination
+cost: 4
+rules_text: When The Full-Timer enters, you may sacrifice The Intern if you control
+  it. If you do, The Full-Timer gets +3 Power and +3 Flesh (promotion).
+flavor_text: It used to fetch coffee. Now it fetches souls.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 4
+    legal: true
+    stats:
+      power: 4
+      flesh: 4
+      leash: 2
+      upkeep: 2

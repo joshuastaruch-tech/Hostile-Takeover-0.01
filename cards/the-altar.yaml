@@ -1,0 +1,20 @@
+slug: the-altar
+name: The Altar
+subtitle: Ritual Site
+type_line: Location
+cost: 2
+rules_text: Ritual site. / Whenever you perform a ritual at The Altar, gain 2 sanity
+  (the board approves).
+flavor_text: The carpet is new. The stains underneath are not.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 2
+    legal: true

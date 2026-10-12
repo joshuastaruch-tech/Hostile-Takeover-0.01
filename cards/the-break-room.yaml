@@ -1,0 +1,19 @@
+slug: the-break-room
+name: The Break Room
+type_line: Location
+cost: 1
+rules_text: Characters you control recover 1 personal sanity at the start of your
+  Upkeep (coffee's on).
+flavor_text: The donuts are stale. The peace is real.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 1
+    legal: true

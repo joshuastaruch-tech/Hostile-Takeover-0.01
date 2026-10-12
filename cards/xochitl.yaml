@@ -1,0 +1,23 @@
+slug: xochitl
+name: Xochitl
+subtitle: VP of Work-Life Balance
+type_line: Character
+cost: 4
+rules_text: 'Enter: each other character you control gains 2 personal sanity (packed
+  lunches). / Morning Routine (pay 1 sanity): a character gains 2 personal sanity.'
+flavor_text: She does it all before 8 AM.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 4
+    legal: true
+    stats:
+      control: 2
+      sanity: 6

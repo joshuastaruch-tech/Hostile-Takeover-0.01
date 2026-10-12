@@ -1,0 +1,21 @@
+slug: going-private
+name: Going Private
+subtitle: Ceremony
+type_line: Ritual
+cost: 4
+rules_text: Requires a ritual site and the sacrifice of a burned-out character. /
+  Your opponents can't target you with actions or traps until your next Upkeep (off
+  the market).
+flavor_text: You can't fire us. We're not public anymore.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 4
+    legal: true

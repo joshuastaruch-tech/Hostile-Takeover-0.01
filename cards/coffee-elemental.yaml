@@ -1,0 +1,25 @@
+slug: coffee-elemental
+name: Coffee Elemental
+subtitle: Break-Room Horror
+type_line: Abomination
+cost: 1
+rules_text: Leashes free. / If you paid Coffee Elemental's upkeep this turn, a character
+  you control gains 1 personal sanity (caffeinated).
+flavor_text: Decaf is a different department. A darker one.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 1
+    legal: true
+    stats:
+      power: 2
+      flesh: 2
+      leash: 0
+      upkeep: 1

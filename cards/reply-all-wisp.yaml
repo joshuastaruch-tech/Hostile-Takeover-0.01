@@ -1,0 +1,24 @@
+slug: reply-all-wisp
+name: Reply-All Wisp
+subtitle: Communication Anomaly
+type_line: Abomination
+cost: 2
+rules_text: When Reply-All Wisp enters, you may draw a card, then discard a card.
+flavor_text: It has cc'd the void. The void has responded.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 2
+    legal: true
+    stats:
+      power: 1
+      flesh: 3
+      leash: 1
+      upkeep: 0

@@ -1,0 +1,25 @@
+slug: the-nda
+name: The NDA
+subtitle: Non-Disclosure Entity
+type_line: Abomination
+cost: 3
+rules_text: Activated abilities of characters your opponent controls cost 1 additional
+  sanity (legal review).
+flavor_text: You can talk about it. You just can't.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 3
+    legal: true
+    stats:
+      power: 2
+      flesh: 4
+      leash: 1
+      upkeep: 1

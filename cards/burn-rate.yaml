@@ -1,0 +1,19 @@
+slug: burn-rate
+name: Burn Rate
+type_line: Ritual
+cost: 2
+rules_text: Requires a ritual site and the sacrifice of a burned-out character. /
+  Each character you control loses 2 personal sanity (accelerated burnout).
+flavor_text: Some must burn so that others may rise. Preferably others.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 2
+    legal: true

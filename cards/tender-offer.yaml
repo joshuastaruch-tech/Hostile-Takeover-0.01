@@ -1,0 +1,20 @@
+slug: tender-offer
+name: Tender Offer
+type_line: Ritual
+cost: 3
+rules_text: Requires a ritual site and the sacrifice of a burned-out character. /
+  Gain control of target abomination an opponent controls. You must have a character
+  with free Control to leash it — otherwise it enters feral under your control.
+flavor_text: Everyone has a price. We checked.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 3
+    legal: true

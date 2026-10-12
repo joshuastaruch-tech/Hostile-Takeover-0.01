@@ -1,0 +1,25 @@
+slug: performance-reviewer
+name: Performance Reviewer
+subtitle: Many-Eyed Evaluator
+type_line: Abomination
+cost: 6
+rules_text: At the start of your Offense phase, Performance Reviewer deals 1 damage
+  to each character you control (360 feedback), then gains +2 Power until end of turn.
+flavor_text: It sees everything you did. Especially the nothing.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 6
+    legal: true
+    stats:
+      power: 5
+      flesh: 5
+      leash: 2
+      upkeep: 2

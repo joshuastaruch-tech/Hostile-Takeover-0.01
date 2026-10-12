@@ -1,0 +1,25 @@
+slug: synergy-hound
+name: Synergy Hound
+subtitle: Team-Building Beast
+type_line: Abomination
+cost: 3
+rules_text: Synergy Hound gets +1 Power for each other abomination you control (pack
+  tactics).
+flavor_text: Alone it is a dog. Together they are a department.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 3
+    legal: true
+    stats:
+      power: 3
+      flesh: 3
+      leash: 1
+      upkeep: 1

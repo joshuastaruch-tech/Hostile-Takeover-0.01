@@ -1,0 +1,25 @@
+slug: non-compete-clause
+name: Non-Compete Clause
+subtitle: Binding Horror
+type_line: Abomination
+cost: 5
+rules_text: Abomination cards cost your opponent 1 additional sanity (enforce the
+  clause).
+flavor_text: You signed it. You don't remember signing it. You signed it.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 5
+    legal: true
+    stats:
+      power: 3
+      flesh: 7
+      leash: 2
+      upkeep: 2

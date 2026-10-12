@@ -1,0 +1,24 @@
+slug: middle-manager
+name: Middle Manager
+subtitle: Hydra of Middle Management
+type_line: Abomination
+cost: 5
+rules_text: Whenever you pay an abomination's upkeep, gain 1 sanity (expense approved).
+flavor_text: Cut off one head and two more ask for a status update.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 5
+    legal: true
+    stats:
+      power: 4
+      flesh: 5
+      leash: 2
+      upkeep: 2

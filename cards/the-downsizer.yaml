@@ -1,0 +1,24 @@
+slug: the-downsizer
+name: The Downsizer
+subtitle: Efficiency Expert
+type_line: Abomination
+cost: 5
+rules_text: When The Downsizer destroys a character, gain 2 sanity (severance absorbed).
+flavor_text: It doesn't hate you. It just doesn't need you.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 5
+    legal: true
+    stats:
+      power: 5
+      flesh: 4
+      leash: 2
+      upkeep: 2

@@ -1,0 +1,25 @@
+slug: the-micromanager
+name: The Micromanager
+subtitle: Oversight Fiend
+type_line: Abomination
+cost: 4
+rules_text: Abominations you control get +1 Flesh (helicopter supervision). Characters
+  you control get −1 Control (undermined).
+flavor_text: It just wants to watch. All of it. All the time.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 4
+    legal: true
+    stats:
+      power: 2
+      flesh: 5
+      leash: 2
+      upkeep: 2

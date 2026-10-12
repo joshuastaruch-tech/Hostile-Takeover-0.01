@@ -1,0 +1,23 @@
+slug: vex
+name: Vex
+subtitle: VP of Wish Fulfillment
+type_line: Character
+cost: 5
+rules_text: 'Three Wishes (pay 3 sanity): draw 2 cards. / Rub the lamp again — whenever
+  an enemy targets Vex, they lose 2 sanity.'
+flavor_text: i fucking dare you.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 5
+    legal: true
+    stats:
+      control: 2
+      sanity: 5

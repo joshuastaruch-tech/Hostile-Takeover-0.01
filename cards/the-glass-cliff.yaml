@@ -1,0 +1,25 @@
+slug: the-glass-cliff
+name: The Glass Cliff
+subtitle: Precipice Entity
+type_line: Abomination
+cost: 6
+rules_text: The Glass Cliff has +3 Power while you have less sanity than your opponent
+  (underdog).
+flavor_text: Promoted beyond competence. Armed beyond reason.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 6
+    legal: true
+    stats:
+      power: 7
+      flesh: 4
+      leash: 2
+      upkeep: 3

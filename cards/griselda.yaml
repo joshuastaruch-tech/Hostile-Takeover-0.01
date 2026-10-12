@@ -1,0 +1,23 @@
+slug: griselda
+name: Griselda
+subtitle: Chief Morale Officer
+type_line: Character
+cost: 4
+rules_text: Whenever Griselda leashes an abomination, that abomination gets +1 Power
+  (motivational).
+flavor_text: Her door is always open. The door leads nowhere.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 4
+    legal: true
+    stats:
+      control: 3
+      sanity: 4

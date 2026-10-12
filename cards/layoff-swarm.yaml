@@ -1,0 +1,23 @@
+slug: layoff-swarm
+name: Layoff Swarm
+subtitle: Redundancy Event
+type_line: Abomination
+cost: 4
+rules_text: Layoff Swarm's Power and Flesh are each equal to the number of burned-out
+  characters in play (it feeds on burnout).
+flavor_text: Nobody is laid off. Everybody is the layoff.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 4
+    legal: true
+    stats:
+      leash: 1
+      upkeep: 1

@@ -1,0 +1,22 @@
+slug: tess
+name: Tess
+subtitle: Interim Everything
+type_line: Character
+cost: 2
+rules_text: Tess costs 1 less for each other character you control (always covering).
+flavor_text: Her title changes weekly. Her workload doesn't.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 2
+    legal: true
+    stats:
+      control: 1
+      sanity: 3

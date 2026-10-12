@@ -1,0 +1,25 @@
+slug: the-mole
+name: The Mole
+subtitle: Embedded Asset
+type_line: Abomination
+cost: 3
+rules_text: You may have The Mole enter leashed to a character your opponent controls
+  (infiltration). Its upkeep is paid from your opponent's sanity pool.
+flavor_text: It has worked there for years. It has always worked there.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 3
+    legal: true
+    stats:
+      power: 3
+      flesh: 3
+      leash: 1
+      upkeep: 1

@@ -1,0 +1,24 @@
+slug: overtime-wraith
+name: Overtime Wraith
+subtitle: After-Hours Entity
+type_line: Abomination
+cost: 3
+rules_text: Overtime Wraith can attack the turn it enters (it never clocks out).
+flavor_text: It died at its desk in 1987. It has not noticed.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 3
+    legal: true
+    stats:
+      power: 4
+      flesh: 2
+      leash: 1
+      upkeep: 2

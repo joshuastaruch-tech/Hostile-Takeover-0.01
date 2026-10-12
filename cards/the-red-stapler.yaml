@@ -1,0 +1,20 @@
+slug: the-red-stapler
+name: The Red Stapler
+subtitle: Relic
+type_line: Artifact
+cost: 3
+rules_text: Stays in play. / Once per turn, you may reduce one abomination's upkeep
+  by 1 (it runs on staples).
+flavor_text: It has survived four layoffs. It will survive you.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 3
+    legal: true

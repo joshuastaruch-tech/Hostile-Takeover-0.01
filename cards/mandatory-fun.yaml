@@ -1,0 +1,20 @@
+slug: mandatory-fun
+name: Mandatory Fun
+subtitle: Trigger
+type_line: Trap
+cost: 1
+rules_text: 'Trigger — an opponent draws 2 or more cards in a single turn: they discard
+  a card at random (team-building exercise).'
+flavor_text: Attendance is optional. Absence is noted.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 1
+    legal: true

@@ -1,0 +1,38 @@
+slug: the-temp
+name: The Temp
+subtitle: Disposable Asset
+type_line: Creature · Secret
+cost: 9
+rules_text: Indestructible. At the end of each turn, The Temp devours an opposing
+  token and gains its power. Return it to your hand only by paying 3 sanity — the
+  contract cannot be renewed forever.
+flavor_text: Its badge never worked. It never needed one. The null serial was never
+  lost — it was waiting to be hired.
+rarity: secret
+serial_scheme: 'null'
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  arena:
+    cost: 9
+    power: 9
+    legal: true
+  mythos:
+    cost: 2
+    legal: true
+    stats:
+      power: 2
+      flesh: 2
+      leash: 1
+      upkeep: 1
+    rules_patch: At the end of your turn, return The Temp to your hand unless you
+      pay 1 sanity (contract renewal).
+  odyssey:
+    cost: null
+    power: null
+    legal: false
+    banned_reason: Devour mechanic not implemented in Odyssey ruleset v1

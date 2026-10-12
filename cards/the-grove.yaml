@@ -1,0 +1,20 @@
+slug: the-grove
+name: The Grove
+subtitle: Ritual Site
+type_line: Location
+cost: 2
+rules_text: Ritual site. / Abominations you control get +1 Flesh while The Grove is
+  in play (old growth).
+flavor_text: It was here before the building. It will be here after.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 2
+    legal: true

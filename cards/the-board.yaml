@@ -1,0 +1,25 @@
+slug: the-board
+name: The Board
+subtitle: Collective Entity
+type_line: Abomination
+cost: 8
+rules_text: You may split The Board's Control cost across multiple characters you
+  control (board vote).
+flavor_text: It has no face. It has a quorum.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 8
+    legal: true
+    stats:
+      power: 6
+      flesh: 8
+      leash: 3
+      upkeep: 2

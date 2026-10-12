@@ -1,0 +1,18 @@
+slug: downsizing
+name: Downsizing
+type_line: Action
+cost: 4
+rules_text: Destroy target character with Control 2 or less (rightsized).
+flavor_text: It's not personal. It's personnel.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 4
+    legal: true

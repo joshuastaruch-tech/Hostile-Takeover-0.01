@@ -1,0 +1,18 @@
+slug: reply-all
+name: Reply All
+type_line: Action
+cost: 1
+rules_text: Deal 1 damage to each character target opponent controls (reply-all apocalypse).
+flavor_text: You have 47 new emails. They are all this one.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 1
+    legal: true

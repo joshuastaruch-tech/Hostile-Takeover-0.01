@@ -1,0 +1,25 @@
+slug: exit-interview
+name: Exit Interview
+subtitle: Terminal Process
+type_line: Abomination
+cost: 2
+rules_text: Leashes free. / When Exit Interview is destroyed, draw two cards (candid
+  feedback).
+flavor_text: It has no complaints. It has documentation.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 2
+    legal: true
+    stats:
+      power: 0
+      flesh: 1
+      leash: 0
+      upkeep: 0

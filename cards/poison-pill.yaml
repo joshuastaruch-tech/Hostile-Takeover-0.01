@@ -1,0 +1,20 @@
+slug: poison-pill
+name: Poison Pill
+type_line: Ritual
+cost: 2
+rules_text: Requires a ritual site and the sacrifice of a burned-out character. /
+  The next 5 sanity you would lose is dealt to your opponent's sanity pool instead
+  (dilution).
+flavor_text: Swallow us and choke.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 2
+    legal: true

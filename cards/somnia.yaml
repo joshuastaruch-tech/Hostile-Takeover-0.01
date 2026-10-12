@@ -1,0 +1,23 @@
+slug: somnia
+name: Somnia
+subtitle: Chief Dream Officer
+type_line: Character
+cost: 4
+rules_text: 'Enter: target character falls asleep until your next turn (it can''t
+  attack or use abilities). / Daydream (pay 2 sanity): draw a card.'
+flavor_text: Even here, there's a standup at 9.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 4
+    legal: true
+    stats:
+      control: 3
+      sanity: 4

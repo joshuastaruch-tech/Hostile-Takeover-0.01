@@ -1,0 +1,25 @@
+slug: the-merger
+name: The Merger
+subtitle: Amalgamation Event
+type_line: Abomination
+cost: 9
+rules_text: The Merger costs 2 less sanity for each abomination you control (economies
+  of scale).
+flavor_text: Two companies entered. One hunger left.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 9
+    legal: true
+    stats:
+      power: 10
+      flesh: 10
+      leash: 3
+      upkeep: 4

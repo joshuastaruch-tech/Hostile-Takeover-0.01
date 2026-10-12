@@ -1,0 +1,25 @@
+slug: the-whistleblower
+name: The Whistleblower
+subtitle: Disclosure Wisp
+type_line: Abomination
+cost: 3
+rules_text: When The Whistleblower is destroyed, your opponent discards a card at
+  random (leak).
+flavor_text: It knows where the bodies are filed.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 3
+    legal: true
+    stats:
+      power: 2
+      flesh: 2
+      leash: 1
+      upkeep: 0

@@ -1,0 +1,25 @@
+slug: passive-aggressive-golem
+name: Passive-Aggressive Golem
+subtitle: Notes Entity
+type_line: Abomination
+cost: 3
+rules_text: Whenever Passive-Aggressive Golem is dealt damage, deal 1 damage to your
+  opponent's sanity pool (cc'd everyone).
+flavor_text: Per my last email, it is already coming.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 3
+    legal: true
+    stats:
+      power: 4
+      flesh: 3
+      leash: 1
+      upkeep: 1

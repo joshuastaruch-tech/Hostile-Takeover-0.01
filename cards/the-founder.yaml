@@ -1,0 +1,26 @@
+slug: the-founder
+name: The Founder
+subtitle: Original Horror
+type_line: Abomination
+cost: 6
+rules_text: The Founder costs 1 less sanity for each burned-out character you control
+  (it remembers when this was all cubicles).
+flavor_text: It built this company. It is still building it. It will never stop building
+  it.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 6
+    legal: true
+    stats:
+      power: 6
+      flesh: 6
+      leash: 3
+      upkeep: 2

@@ -1,0 +1,24 @@
+slug: the-intern
+name: The Intern
+subtitle: Unpaid Associate
+type_line: Abomination
+cost: 1
+rules_text: Leashes free. / When The Intern is destroyed, gain 1 sanity (exit interview).
+flavor_text: It doesn't know what it is yet. That's what makes it dangerous.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 1
+    legal: true
+    stats:
+      power: 1
+      flesh: 1
+      leash: 0
+      upkeep: 0

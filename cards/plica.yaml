@@ -1,0 +1,23 @@
+slug: plica
+name: Plica
+subtitle: Director of Red Tape
+type_line: Character
+cost: 3
+rules_text: 'Paper Trail — whenever an enemy draws a card, they lose 1 sanity. / Red
+  Tape (pay 1 sanity): target enemy can''t use abilities until your next turn.'
+flavor_text: Please sign here. And here. And here.
+rarity: common
+serial_scheme: open
+version: 1
+media:
+  art: null
+  model_3d: null
+  audio: null
+  video: null
+games:
+  mythos:
+    cost: 3
+    legal: true
+    stats:
+      control: 2
+      sanity: 4
