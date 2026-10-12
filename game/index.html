@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MYTHOS: Hostile Takeover — Playable v1</title>
+<meta property="og:title" content="MYTHOS: Hostile Takeover — Play the Beta">
+<meta property="og:description" content="A horror card battler where middle management is literal. Play the free beta in your browser — no download.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://justwiggleit.github.io/sturdy-eureka/">
+<meta property="og:image" content="https://justwiggleit.github.io/sturdy-eureka/assets/cards/001.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MYTHOS: Hostile Takeover — Play the Beta">
+<meta name="twitter:description" content="A horror card battler where middle management is literal. Play free in your browser.">
+<link rel="stylesheet" href="style.css?v=da987ad2">
+<script>
+/* Early error trap: runs before game scripts. Any load failure surfaces the
+   loader's Report button instead of a dead page. */
+window.__mythosErrors = [];
+window.__showLoadError = function (msg) {
+  window.__mythosErrors.push(String(msg || 'unknown error'));
+  var spin = document.getElementById('loader-spinner');
+  var txt = document.getElementById('loader-text');
+  var err = document.getElementById('loader-error');
+  if (spin) spin.style.display = 'none';
+  if (txt) txt.textContent = 'The game failed to load.';
+  if (err) err.style.display = 'block';
+};
+window.addEventListener('error', function (e) {
+  window.__showLoadError(e.message || 'script error');
+}, true);
+window.addEventListener('unhandledrejection', function (e) {
+  window.__showLoadError((e.reason && e.reason.message) || 'unhandled rejection');
+}, true);
+</script>
+</head>
+<body>
+
+<div id="loader">
+  <div class="loader-inner">
+    <h1>MYTHOS</h1>
+    <div class="subtitle">HOSTILE TAKEOVER</div>
+    <div class="spinner" id="loader-spinner"></div>
+    <p id="loader-text">Loading…</p>
+    <div id="loader-error" style="display:none">
+      <p>Something went wrong while loading the game.</p>
+      <button id="loader-report" class="report-btn">Report issue</button>
+    </div>
+  </div>
+</div>
+
+<div id="start-screen" style="display:none">
+  <div class="title-block">
+    <h1>MYTHOS</h1>
+    <div class="subtitle">HOSTILE TAKEOVER</div>
+    <p class="tagline">A corporate-Lovecraft card game for 2 players. Playable prototype v1.</p>
+  </div>
+  <div class="deck-pick">
+    <div class="deck-card"><h3 id="deck-a-name">Deck A</h3><p>Ritual control — burn out your team, then take over reality.</p></div>
+    <div class="vs">VS</div>
+    <div class="deck-card"><h3 id="deck-b-name">Deck B</h3><p>Hostile aggro — flood the board and break their mind.</p></div>
+  </div>
+  <div class="mode-btns">
+    <button id="start-login" class="login-btn">🔑 Login (members)</button>
+    <button id="start-guest">🎫 Play as guest</button>
+  </div>
+  <div id="member-badge" class="member-badge" style="display:none"></div>
+  <div class="mode-btns">
+    <button id="start-hotseat">👥 2 Players (hotseat)</button>
+    <button id="start-ai">🤖 Play vs AI</button>
+  </div>
+  <div class="mode-btns">
+    <button id="start-report" class="report-btn">⚠ Report issue</button>
+  </div>
+  <details class="howto">
+    <summary>How to play (quick)</summary>
+    <ul>
+      <li>Each player starts at <b>40 sanity</b> — it's your life <i>and</i> your currency.</li>
+      <li>Win by breaking the enemy to 0 sanity, completing <b>3 rituals</b>, or decking them out.</li>
+      <li>Turn: <b>Draw → Upkeep → Main → Attack → Defend → Resolve → End</b>. Use <b>Next phase →</b> to advance.</li>
+      <li><b>Main:</b> click a card in hand for Play / Set trap / Ritual / Ability options — tap the <b>▶</b> button to play it instantly, or <b>long-press and drag</b> it to your field.</li>
+      <li><b>Upkeep:</b> pay each abomination or it goes <b>feral</b> and eats <i>your</i> sanity.</li>
+      <li><b>Attack:</b> click your abominations to declare attackers (click again to stand down), then <b>Next phase →</b>.</li>
+      <li><b>Defend:</b> the defender clicks one of their creatures, then the attacker it blocks, then <b>Next phase →</b>.</li>
+      <li><b>Resolve:</b> hit <b>⚔ Resolve combat</b> to apply damage and outcomes.</li>
+      <li><b>Characters</b> never attack but can block. At 0 personal sanity they <b>burn out</b> — prime ritual fuel.</li>
+      <li><b>Rituals</b> need a ritual site (Altar/Grove) + a burned-out character sacrificed. One per turn.</li>
+      <li><b>Double-click</b> any card image to zoom it. <b>Long-press and drag</b> a hand card to your field to play it, or to the discard pile. Use the <b>Flip</b> button in a card's detail view to turn it over.</li>
+    </ul>
+  </details>
+  <p class="foot">v1 prototype — rules simplifications listed in README.md · art: the MYTHOS 060 set</p>
+</div>
+
+<div id="game-screen" style="display:none">
+  <div id="board"></div>
+  <div id="midbar"></div>
+  <div id="pending" style="display:none"></div>
+  <div id="log" style="display:none"></div>
+</div>
+
+<div id="detail" style="display:none">
+  <div class="modal">
+    <button id="detail-close" class="x">✕</button>
+    <div id="detail-body"></div>
+  </div>
+</div>
+
+<div id="zoom" style="display:none">
+  <div class="modal zoom-modal">
+    <button id="zoom-close" class="x">✕</button>
+    <img id="zoom-img" src="" alt="card zoom">
+  </div>
+</div>
+
+<div id="auth-modal" style="display:none">
+  <div class="modal auth-modal">
+    <button id="auth-close" class="x">✕</button>
+    <h2 id="auth-title">🔑 Member sign in</h2>
+    <p class="auth-sub" id="auth-sub">Sign in with your MYTHOS member account.</p>
+    <label for="auth-email">Email</label>
+    <input id="auth-email" type="email" autocomplete="email" placeholder="you@example.com">
+    <label for="auth-pass">Password</label>
+    <input id="auth-pass" type="password" autocomplete="current-password" placeholder="••••••••">
+    <div id="auth-error" class="auth-error" style="display:none"></div>
+    <button id="auth-submit" class="auth-submit">Sign in</button>
+    <p class="auth-switch"><a id="auth-toggle" href="#">Create a new account</a></p>
+    <p class="auth-alt"><a id="auth-guest" href="#">Continue as guest</a> · <a id="auth-wix" href="#" target="_blank" rel="noopener">Get membership</a></p>
+  </div>
+</div>
+
+<div id="toast" style="display:none"></div>
+
+<div id="popup" style="display:none">
+  <div class="modal popup-modal">
+    <button id="popup-close" class="x">✕</button>
+    <div id="popup-msg"></div>
+    <div class="popup-btns">
+      <button id="popup-info">ⓘ Info</button>
+      <button id="popup-ok">OK</button>
+    </div>
+  </div>
+</div>
+
+<script src="data.js?v=da987ad2"></script>
+<script src="engine.js?v=da987ad2"></script>
+<script src="ai.js?v=da987ad2"></script>
+<script src="net.js?v=da987ad2"></script>
+<script src="ui.js?v=da987ad2"></script>
+<!-- Firebase (identity, collections, stats). Fails soft to offline mode. -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js?v=da987ad2"></script>
+<script src="firebase.js?v=da987ad2"></script>
+<script>
+  if (window.MYTHOS_FIREBASE && window.MYTHOS_FIREBASE_CONFIG) {
+    window.MYTHOS_FIREBASE.init(window.MYTHOS_FIREBASE_CONFIG);
+  }
+</script>
+</body>
+</html>
